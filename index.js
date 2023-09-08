@@ -11,15 +11,15 @@ arr.forEach((button) => {
                 if (isNaN(string) || !isFinite(string)) {
                     input.value = "Error";
                 } 
-                else if (e.target.innerHTML == "AC"){
-                    input.value = "";
-                }
                 else {
                     input.value = string;
                 }
             } catch (error) {
                 input.value = "Error";
             }
+        } else if (e.target.innerHTML == "AC") {
+            string = "";
+            input.value = "";
         } else {
             string += e.target.innerHTML;
             input.value = string;
