@@ -1,5 +1,5 @@
 let input = document.getElementById('inputBox');
-let buttons = document.querySelectorAll('button');
+let buttons = document.querySelectorAll('.button');
 
 let string = "";
 let arr = Array.from(buttons);
@@ -10,7 +10,11 @@ arr.forEach((button) => {
                 string = eval(string);
                 if (isNaN(string) || !isFinite(string)) {
                     input.value = "Error";
-                } else {
+                } 
+                else if (e.target.innerHTML == "AC"){
+                    input.value = "";
+                }
+                else {
                     input.value = string;
                 }
             } catch (error) {
