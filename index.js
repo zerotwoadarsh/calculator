@@ -13,7 +13,7 @@ arr.forEach((button) => {
     button.addEventListener('click', (e) => {
         if (e.target.innerHTML == '=') {
             try {
-                string = eval(string);
+                string = `${eval(string)}`;
                 if (isNaN(string) || !isFinite(string)) {
                     buttonError.play();
                     input.value = "Error";
@@ -30,7 +30,11 @@ arr.forEach((button) => {
             buttonClear.play();
             string = "";
             input.value = "";
-        } else {
+        } else if(e.target.innerHTML== "Del"){
+            string=string.slice(0,string.length-1)
+            input.value=string;
+        }
+        else {
             buttonClick.play();
             string += e.target.innerHTML;
             input.value = string;
